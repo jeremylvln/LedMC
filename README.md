@@ -7,6 +7,9 @@ Let Minecraft control your RGB keyboard!
 
 Today, a lot of gamers have a RGB keyboard to pimp their setup. They can control them with the provided software. Some have preconfigured integrations with games whereas others not. The idea of LedMC is to provide a low-level integration with the game. It will permit to improve your survival life with modules you enabled.
 
+
+This mod is not called KeyboardLedMC because it could be cool to control more RGB peripherals in the future. But first, lets do keyboards properly ;).
+
 ## Installation
 
 This mod works with Minecraft Forge. Place the jar archive of LedMC in the `mods` folder. When your game will start for the first time, you will be asked to select your keyboard provider and layout. If you cancel the configuration window or if you select `I don't have a compatible RGB keyboard`, LedMC will simply be inactive. If your keyboard provider and/or layout is not supported yet, be patient! Maybe awesome contributors will come to rescue you!
