@@ -1,6 +1,11 @@
 # :bulb: LedMC [![Build Status](https://img.shields.io/travis/IamBlueSlime/LedMC/master.svg?style=flat-square)](https://travis-ci.org/IamBlueSlime/LedMC) [![Minecraft Version](https://img.shields.io/badge/minecraft%20version-1.12.1-red.svg?style=flat-square)](https://github.com/IamBlueSlime/ForgottenTemple) [![License](https://img.shields.io/badge/license-Ce--CILL--B-blue.svg?style=flat-square)](LICENSE)
 
-Let Minecraft control your RGB keyboard! Today, a lot of gamers have a RGB keyboard to pimp their setup. They can control them with the provided software. Some have preconfigured integrations with games whereas others not. The idea of LedMC is to provide a low-level integration with the game. It will permit to improve your survival life with modules you enabled.
+### Not published to Curse yet, still work to do on the mod :)
+
+
+Let Minecraft control your RGB keyboard!
+
+Today, a lot of gamers have a RGB keyboard to pimp their setup. They can control them with the provided software. Some have preconfigured integrations with games whereas others not. The idea of LedMC is to provide a low-level integration with the game. It will permit to improve your survival life with modules you enabled.
 
 ## Installation
 
@@ -13,7 +18,7 @@ TODO: Module explanations.
 | Keyboard Provider      | Model                  | Tested                 |
 | :--------------------: | :--------------------: | :--------------------: |
 | Logitech               | G910 Orion Spark       | No (Should work)       |
-|                        | G810 Orion Spectrum    | Yes                    |
+| Logitech               | G810 Orion Spectrum    | Yes                    |
 
 | Keyboard Layout        | Tested                 |
 | :--------------------: | :--------------------: |
@@ -24,7 +29,7 @@ TODO: Module explanations.
 
 ### Adding a keyboard provider
 
-If you are a modder and you want to contribute by adding your keyboard provider, please create a Keyboard Controller class like a did [here](https://github.com/IamBlueSlime/LedMC/blob/master/src/main/java/fr/blueslime/ledmc/peripheral/logitech/LogitechController.java). You just have to implement `IKeyboardController` who contains methods used to do the magic!
+If you are a modder and you want to contribute by adding your keyboard provider, please create a Keyboard Controller class like I did [here](https://github.com/IamBlueSlime/LedMC/blob/master/src/main/java/fr/blueslime/ledmc/peripheral/logitech/LogitechController.java). You just have to implement `IKeyboardController` who contains methods used to do the magic!
 
 ```java
 package fr.blueslime.ledmc.peripheral;
@@ -54,6 +59,10 @@ By contributing, you will probably need to support your code during the updates 
 
 
 ### Adding a keyboard layout
+
+TODO.
+
+### Adding a module
 
 TODO.
 
