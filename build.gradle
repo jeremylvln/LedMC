@@ -1,0 +1,62 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url = 'http://files.minecraftforge.net/maven' }
+    }
+
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+    }
+}
+
+apply plugin: 'net.minecraftforge.gradle.forge'
+
+group = 'fr.blueslime'
+version = '1.0'
+archivesBaseName = 'LedMC'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+if (System.getenv().BUILD_NUMBER) {
+    version = version + '.' + '${System.getenv().BUILD_NUMBER}'
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+}
+
+minecraft {
+    version = "1.12.1-14.22.0.2462"
+    mappings = "snapshot_20170624"
+    replace '${version}', project.version
+
+    runDir = 'run'
+    // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
+}
+
+test {
+    afterTest { desc, result ->
+        logger.quiet "Executing test ${desc.name} [${desc.className}] with result: ${result.resultType}"
+    }
+}
+
+processResources {
+    inputs.property 'version', project.version
+    inputs.property 'mcversion', project.minecraft.version
+
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+        expand 'version':project.version, 'mcversion':project.minecraft.version
+    }
+
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+}

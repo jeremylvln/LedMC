@@ -1,0 +1,16 @@
+[
+  {
+    "modid": "ledmc",
+    "name": "LedMC",
+    "description": "Let Minecraft control your RGB peripherals!",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": ["IamBlueSlime"],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
