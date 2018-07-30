@@ -14,6 +14,8 @@ This mod works with Minecraft Forge. Place the jar archive of LedMC in the `mods
 
 TODO: Module explanations.
 
+![Screenshot](screenshot.png)
+
 
 ## Compatibility
 
