@@ -1,11 +1,11 @@
 buildscript {
     repositories {
-        mavenCentral()
-        maven { url = 'http://files.minecraftforge.net/maven' }
+	mavenCentral()
+	maven { url = 'http://files.minecraftforge.net/maven' }
     }
 
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+	classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
     }
 }
 
@@ -24,27 +24,17 @@ if (System.getenv().BUILD_NUMBER) {
 
 repositories {
     flatDir {
-        dirs 'libs'
+	dirs 'libs'
     }
 }
 
 dependencies {
-    testCompile 'junit:junit:4.12'
 }
 
 minecraft {
-    version = "1.12.1-14.22.0.2462"
-    mappings = "snapshot_20170624"
-    replace '${version}', project.version
-
+    version = "1.12.2-14.23.4.2745"
+    mappings = "snapshot_20171003"
     runDir = 'run'
-    // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
-}
-
-test {
-    afterTest { desc, result ->
-        logger.quiet "Executing test ${desc.name} [${desc.className}] with result: ${result.resultType}"
-    }
 }
 
 processResources {
@@ -52,11 +42,11 @@ processResources {
     inputs.property 'mcversion', project.minecraft.version
 
     from(sourceSets.main.resources.srcDirs) {
-        include 'mcmod.info'
-        expand 'version':project.version, 'mcversion':project.minecraft.version
+	include 'mcmod.info'
+	expand 'version':project.version, 'mcversion':project.minecraft.version
     }
 
     from(sourceSets.main.resources.srcDirs) {
-        exclude 'mcmod.info'
+	exclude 'mcmod.info'
     }
 }
