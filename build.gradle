@@ -12,7 +12,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 
 group = 'fr.blueslime'
-version = '1.0.0'
+version = '1.0.1'
 archivesBaseName = 'LedMC'
 
 sourceCompatibility = 1.8
@@ -22,6 +22,11 @@ if (System.getenv().BUILD_NUMBER) {
     version = version + '.' + '${System.getenv().BUILD_NUMBER}'
 }
 
+configurations {
+    embedded
+    compile.extendsFrom embedded
+}
+
 repositories {
     flatDir {
 	    dirs 'libs'
@@ -29,7 +34,7 @@ repositories {
 }
 
 dependencies {
-    compile group: 'com.jgoodies', name: 'forms', version: '1.2.1'
+    embedded group: 'com.jgoodies', name: 'forms', version: '1.2.1'
 }
 
 minecraft {
@@ -49,5 +54,13 @@ processResources {
 
     from(sourceSets.main.resources.srcDirs) {
 	    exclude 'mcmod.info'
+    }
+}
+
+jar {
+    configurations.embedded.each { dep ->
+        from(project.zipTree(dep)) {
+            exclude 'META-INF', 'META-INF/**'
+        }
     }
 }
